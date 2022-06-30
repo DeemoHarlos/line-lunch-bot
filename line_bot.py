@@ -22,21 +22,14 @@ app = Flask(__name__)
 # 變數
 
 # 設定api, webhook, app name 
-line_bot_api = LineBotApi('KbUSP5ShwG5gziWRdy3niYUieAZaYlDc2YMW1HB3Ao05YRm+DKUar29lK0lfqjeMqzLRm1MLALf/R4jIV/k+98YxIR40SryCI8qsokVBe31heMMafyPQSI89odk42Ts1dD9b35gyPMCkOhHEGp+M/wdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('b33a01e1e548c7b39a732d62245e1d36')
-app_name = 'eatwhat-in-ncu'
+line_bot_api = LineBotApi('KT4rhGOD3U+vC7AyHlikHxhS+ZoUWJkuwcXmPj/0TY/TAoEPGBpPePjryL2n5IRrcaya7QpxetOtNOET/dctM8xDP+IaAHMdq8aq3sIu0eNRaKS8VZG9qOiEVQ+ZxNtyp5woK29GWmeX63a2AeqtigdB04t89/1O/w1cDnyilFU=')
+handler = WebhookHandler('0a61fe65c944f1ab0956d40e2fd2b928')
+app_name = 'line-lunch-bot-dev'
 
 # 管理員、可用群組、餐廳名單
-admins = {  "洪仲杰" : "Uefa7580b75912cf5cbd1be6dba8dafbe",
-#           "陳宜祥" : "U75851bf4cd33d189464170b50df30ee8",
-            "蕭崇聖" : "U45eac4b2d3598d5bb9ee33cee0518d45",
-            "賴冠鏵" : "U3ff60662d9e6b90835aa52fa8cfb6ef5",
-            "林俊宇" : "U0772fe2a09529c65b7a7c0163a92feda",
-            "陳怡誠" : "Ua96931bfef5d06d91250f883559a0750",
-            "洪梓彧" : "U0689f87646c44772528af8b2b4405117",
-            "張晉源" : "Ue8f9f131ad9ce7a424ec19b1fd82b076"}
-groups = {  "午餐群組" : "Cf4a08527ed49eab9d2cf53a8b0309cf0",
-            "測試群組" : "Ce6071d5887fd879bc620143fce3c8382"}
+admins = { "洪梓彧": "U5df34be53c61a3a0d2cf12ad9a55e70a" }
+# groups = {  "午餐群組" : "Cf4a08527ed49eab9d2cf53a8b0309cf0",
+#             "測試群組" : "Ce6071d5887fd879bc620143fce3c8382"}
 restaurants = ['大盛','六星','日日佳','甲一','皇上皇','華圓','寶多福','小林','月枱','呂媽媽',
                '佳臻','小煮角','中一排骨']
 
@@ -97,8 +90,8 @@ def handle_message(event):
       
     # handle command and process string    
     # 字串需要包含'/'以及在指定群組才做處理
-    if '/' not in message or group_id not in groups.values():
-        return 
+    # if '/' not in message or group_id not in groups.values():
+    #     return 
     message = message.replace(' ','').replace('\n','').split('/',1)
     print(message)
     

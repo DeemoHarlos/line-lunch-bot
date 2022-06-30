@@ -28,7 +28,7 @@ app_name = 'line-lunch-bot-dev'
 
 # 管理員、可用群組、餐廳名單
 admins = [
-    'U0689f87646c44772528af8b2b4405117', # 洪梓彧
+    'U5df34be53c61a3a0d2cf12ad9a55e70a', # 洪梓彧
 ]
 # groups = [
 #     'Cf4a08527ed49eab9d2cf53a8b0309cf0', # 午餐群組

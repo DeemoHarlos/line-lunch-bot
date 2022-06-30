@@ -94,7 +94,7 @@ def handle_message(event):
 
     # handle command and process string
     # 字串需要包含'/'以及在指定群組才做處理
-    # if '/' not in message or group_id not in groups.values():
+    # if '/' not in message or group_id not in groups:
     #     return
     message = message.replace(' ','').replace('\n','').split('/',1)
     print(message)
@@ -120,7 +120,7 @@ def handle_message(event):
 
     # 決定要吃的餐廳
     # 需要admin權限
-    elif command == '吃' and user_id in admins.values():
+    elif command == '吃' and user_id in admins:
         restaurant = parameters
         if restaurant in restaurants:
             order_lib.setRestaurant(restaurant)
@@ -130,7 +130,7 @@ def handle_message(event):
 
     # 清除訂餐資料
     # 需要admin權限
-    elif command == '清除' and user_id in admins.values():
+    elif command == '清除' and user_id in admins:
         order_lib.clear()
         reply = '清除資料'
 
@@ -163,7 +163,7 @@ def handle_message(event):
 
         # 關閉點餐
         # 需要admin權限
-        elif command == '截止' and user_id in admins.values():
+        elif command == '截止' and user_id in admins:
             order_lib.setRestaurant('')
 
     # 回覆訊息
